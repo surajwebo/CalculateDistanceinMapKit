@@ -73,8 +73,7 @@
 
 
 
--(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:
- (id <MKAnnotation>)annotation {
+-(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation: (id <MKAnnotation>)annotation {
 	MKPinAnnotationView *pinView = nil; 
 	if(annotation != mapView.userLocation) 
 	{
@@ -86,7 +85,17 @@
 		pinView.pinColor = MKPinAnnotationColorRed; 
 		pinView.canShowCallout = YES;
 		pinView.animatesDrop = YES;
-		} 
+        UIImage *flagImage = [UIImage imageNamed:@"India.png"];
+        // You may need to resize the image here.
+        
+        
+        CGSize size = CGRectMake(0, 0, 30, 30).size;
+        UIGraphicsBeginImageContext(size);
+        [flagImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        pinView.image = destImage;
+		}
 	else {
 		[mapView.userLocation setTitle:@"I am here"];
 	}

@@ -18,6 +18,7 @@
 		F0CDAB1E11EB3C1C004EA7BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CDAB1D11EB3C1C004EA7BE /* CoreLocation.framework */; };
 		F0CDAB2211EB3C25004EA7BE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CDAB2111EB3C25004EA7BE /* MapKit.framework */; };
 		F0CDAB3B11EB436F004EA7BE /* DisplayMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CDAB3A11EB436F004EA7BE /* DisplayMap.m */; };
+		FB5C5A4E166E1FBD00500BF9 /* India.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5C5A4D166E1FBD00500BF9 /* India.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F0CDAB2111EB3C25004EA7BE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F0CDAB3911EB436F004EA7BE /* DisplayMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayMap.h; sourceTree = "<group>"; };
 		F0CDAB3A11EB436F004EA7BE /* DisplayMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayMap.m; sourceTree = "<group>"; };
+		FB5C5A4D166E1FBD00500BF9 /* India.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = India.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FB5C5A4D166E1FBD00500BF9 /* India.png */,
 				2899E5210DE3E06400AC0155 /* MapKitDisplayViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* MapKitDisplay-Info.plist */,
@@ -147,7 +150,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MapKitDisplay" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,6 +171,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* MapKitDisplayViewController.xib in Resources */,
+				FB5C5A4E166E1FBD00500BF9 /* India.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
