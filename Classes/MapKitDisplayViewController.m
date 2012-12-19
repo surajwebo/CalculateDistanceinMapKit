@@ -12,7 +12,7 @@
 @implementation MapKitDisplayViewController
 
 @synthesize mapView;
-
+@synthesize routeLine;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -69,6 +69,21 @@
     NSLog(@"Distance between two locations in Meter = %f \n Mile = %f \n KiloMeter = %f", distance, distance * 0.000621371192, distance /1000); 
     // 1 Meter = 0.000621371192 Miles 
     // 1 Mile = 1609.344 Meters
+    
+    
+    
+    MKMapPoint * pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
+    
+    CLLocationCoordinate2D coord1 = {22.569722, 88.369722};
+    CLLocationCoordinate2D coord2 =  {19.12, 73.02};
+    
+    pointsArray[0]= MKMapPointForCoordinate(coord1);
+    pointsArray[1]= MKMapPointForCoordinate(coord2);
+    
+    routeLine = [MKPolyline polylineWithPoints:pointsArray count:2];
+    free(pointsArray);
+    
+    [mapView addOverlay:routeLine];  //MkMapView declared in .h
 }
 
 
@@ -126,6 +141,26 @@
 - (void)dealloc {
 	[mapView release];
     [super dealloc];
+}
+
+//MKMapViewDelegate
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKOverlayView* overlayView = nil;
+    
+    
+    MKPolylineView  * _routeLineView = [[MKPolylineView alloc] initWithPolyline:self.routeLine];
+    _routeLineView.fillColor = [UIColor redColor];
+    _routeLineView.strokeColor = [UIColor greenColor];
+    _routeLineView.lineWidth = 5;
+    _routeLineView.lineCap = kCGLineCapSquare;
+    
+    
+    overlayView = _routeLineView;
+    
+    return overlayView;
+    
 }
 
 @end

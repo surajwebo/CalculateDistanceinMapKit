@@ -14,8 +14,10 @@
 @interface MapKitDisplayViewController : UIViewController <MKMapViewDelegate> {
 	
 	IBOutlet MKMapView *mapView;
+    MKPolyline *routeLine;
 }
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain)  MKPolyline *routeLine;
 
 @end
 
